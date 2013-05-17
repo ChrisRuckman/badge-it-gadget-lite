@@ -4,6 +4,28 @@
 //Copyright (c) 2012 Kerri Lemoie, Codery - gocodery.com
 //Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
 
+/*
+* -----------------------------------------------------------------------
+*
+* Modified by Center for Educational Technologies
+* Copyright (c) 2013 Center for Educational Technologies
+* Sublicensed under the GNU GPL license
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* -----------------------------------------------------------------------
+*/
+
 /*This script creates the badge for the user. and provides the link to get-my-badge.php which interacts with open badges*/
 
 include 'gadget-settings.php';
@@ -106,7 +128,7 @@ if( isset($_POST) ){
 			 	fclose($badgeHandle);
 				
 				$to = $badgeRecipientEmail;
-				$from = "badges@cet.edu";
+				$from = "you@yourdomain.com";
 				$subject = "Your " . $badgeName . " Badge";
 				$message = 'Congratulations!
 
@@ -151,10 +173,10 @@ http://badges.cet.edu
 		$sql = "INSERT INTO `awardslog` (`badgename`, `issuername`, `numissued`)
 				VALUES ('$badgeName', '$issuername', '$numissued')";
 
-		$dbhost = 'db2.cet.edu';
-		$dbuser = 'andrew';
-		$dbpass = '54mur41';
-		$dbname = 'badges';
+		$dbhost = 'your db host';
+		$dbuser = 'username';
+		$dbpass = 'password';
+		$dbname = 'database';
 
 		$link = mysql_connect($dbhost, $dbuser, $dbpass);
 		mysql_select_db($dbname);
