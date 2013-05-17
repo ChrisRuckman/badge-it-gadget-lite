@@ -105,7 +105,7 @@ if( isset($_POST) ){
 		if(strlen($badgeName) > 1) {}
 
 		$to = $badgeRecipientEmail;
-		$from = "issuer email address goes here";
+		$from = "badges@cet.edu";
 		if($_POST["rbDesc"] == "5-12") {
 			$subject = "Your " . $badgeName . " Certificate";
 			$message = 'Congratulations!
@@ -130,10 +130,11 @@ Great job on this challenge!
 
 Badge Team at the Center for Educational Technologies
 Home of the NASA-sponsored Classroom of the Future
+http://badges.cet.edu
 ';
 		} else {
 			$subject = "Your " . $badgeName . " Badge";
-			$message = 'Congratulations, ' . $badgeRecipientName . '!
+			$message = 'Congratulations!
 
 You have successfully completed the ' . $badgeName . ' activity and earned a badge.
 
@@ -147,6 +148,7 @@ Please DO show off your certificate, and share how you earned it!
 
 Badge Team at the Center for Educational Technologies
 Home of the NASA-sponsored Classroom of the Future
+http://badges.cet.edu
 ';
 	}
 		$headers = "To: " . $to . "\r\n";
@@ -172,10 +174,10 @@ Home of the NASA-sponsored Classroom of the Future
 		$sql = "INSERT INTO `awardslog` (`badgename`, `agegroup`)
 				VALUES ('$thebadge', '$agegroup')";
 
-		$dbhost = 'your database host';
-		$dbuser = 'username';
-		$dbpass = 'password';
-		$dbname = 'database';
+		$dbhost = 'db2.cet.edu';
+		$dbuser = 'andrew';
+		$dbpass = '54mur41';
+		$dbname = 'badges';
 
 		$link = mysql_connect($dbhost, $dbuser, $dbpass);
 		mysql_select_db($dbname);

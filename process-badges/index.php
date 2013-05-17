@@ -83,7 +83,12 @@ include 'gadget-settings.php';
 			<div class="formRow">
 				<label><span class="required">*</span> What is your email address? We need this to email you a certificate and information about badge pickup and the Mozilla backpack.</label>
 				<br />
-				<input type="text" style="width: 300px;" id="email" name="badge_recipient_email" value="<?php print $bf['posted_form_data']['badgeRecipientEmail']?>" required>
+				<input type="text" style="width: 300px;" id="email" name="badge_recipient_email"onblur="isEmailAddress(this.value, 'email'); checkEmail();" value="<?php print $bf['posted_form_data']['badgeRecipientEmail']?>" required>
+			</div>
+			<div class="formRow">
+				<label><span class="required">*</span> Re-enter your email address</label>
+				<br />
+				<input type="text" style="width: 300px;" id="email2" onblur="isEmailAddress(this.value, 'email2'); checkEmail();" required />
 			</div>
 			<div class="formRow" style="display: none;">
 				<label>Badge Experience URL</label>
@@ -99,12 +104,43 @@ include 'gadget-settings.php';
 				<input type="radio" name="rbDesc" value="Adult" required>Other Adult learner 
 			</div>
 			<div class="formRow">
-				<input class="submit" id="submit-button" type="submit" value="Submit"/>
+				<input class="submit" id="submit-button" type="submit" value="Submit" disabled/>
 				<input type="button" id="btnCancel" value="Cancel" onclick="window.parent.Shadowbox.close();" />
 			</div>
 		</form>
 		
 	<script type="text/javascript">
+		function checkEmail() {
+			var email1 = document.getElementById("email").value;
+			var email2 = document.getElementById("email2").value;
+			var btnsub = document.getElementById("submit-button");
+
+			if((email1 != email2)) {
+				btnsub.disabled = true;
+				if(email1.length > 0 && email2.length > 0) { alert("Email addresses do not match"); }
+			} else {
+				btnsub.disabled = false;
+			}
+		}
+
+		function isEmailAddress(str, id) {
+		    var filter = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+		    if(String(str).search (filter) == -1) {
+		    	if(str.length > 0) {
+			    	alert('Email Address does not appear to be valid');
+			    	setTimeout(function() {
+				    	document.getElementById(id).focus();
+				    	document.getElementById(id).select();
+				    }, 10);
+			    	//document.getElementById(id).select();
+			    	document.getElementById(id).style.backgroundColor = "#FFCCCC";
+			    }
+			} else {
+		    	document.getElementById(id).style.backgroundColor = "#E0E0E0";
+			}
+		    return String(str).search (filter) != -1;
+		}
+
 		function getQueryVariable(variable) {
 		    var query = window.location.search.substring(1);
 		    var vars = query.split('&');
@@ -120,13 +156,17 @@ include 'gadget-settings.php';
 			var elem = document.getElementById('badge_info');
 			var txt = "";
 			switch(theBadge) {
-				case 'Badge-ItGadgetLiteBadge':
+				case 'lunarrovergeometry':
 					id = 1;
-					txt = "Badge-It Gadget Lite Badge";
+					txt = "Lunar Rover Geometry";
 					break;
-				case "AnotherBadge":
+				case "cygames3star":
 					id = 12;
-					txt = "Another Badge";
+					txt = "CyGaMEs - Lunar Geology - Three Star";
+					break;
+				case "cygames7star":
+					id = 13
+					txt = "CyGaMEs - Lunar Geology - Seven Star";
 					break;
 			}
 			elem.value = id;

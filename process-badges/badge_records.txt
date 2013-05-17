@@ -171,3 +171,8 @@ BADGE AWARDED: 2013-05-06, , E:\websites/badge-it-gadget-lite/digital-badges/iss
 BADGE AWARDED: 2013-05-06, , E:\websites/badge-it-gadget-lite/digital-badges/issued/json/-q41q8pq98s00o204r9800998rps8427r.json, 4b331e984e8fc1509cf4f27ee5173fc435f70c858a37e408933d7bc42f9fd27c, 
 BADGE AWARDED: 2013-05-08, Lunar Rover Geometry, E:\websites/badge-it-gadget-lite/digital-badges/issued/json/1-84qrpr31o1p33q2r52pq1rps832324o7.json, cbd2673972d0809d6f7c5433fc1a220cf12457dc73bdc4c3ab808657d4e24f16, /badge-it-gadget-lite/digital-badges/images/LunarRoverGeometryCertificate.pdf
 BADGE ISSUED: 2013-05-08, SUCCESS, Lunar Rover Geometry,  
+BADGE AWARDED: 2013-05-16, , E:\websites/badge-it-gadget-lite/digital-badges/issued/json/-rpr926q8p0356205276n45266q361161.json, fa6c2315a3447686e0fc1d7606c046886bdbdba8c4f83ee0be45ab1a42eb90bb, 
+BADGE AWARDED: 2013-05-16, , E:\websites/badge-it-gadget-lite/digital-badges/issued/json/-0ro5484s0n5q7o0nq5587qqpp6q86762.json, 67939d0bab520022b444233bb14cd6a84333ce569747645d2c1dbcbaed819528, 
+BADGE AWARDED: 2013-05-16, , E:\websites/badge-it-gadget-lite/digital-badges/issued/json/-0ro5484s0n5q7o0nq5587qqpp6q86762.json, 1e4cb04b6f87329abbd0369738a016e295107c240bb81b408c31ddee91d4394a, 
+BADGE AWARDED: 2013-05-16, , E:\websites/badge-it-gadget-lite/digital-badges/issued/json/-0ro5484s0n5q7o0nq5587qqpp6q86762.json, 60475be705e0acfab2e5e929dbbfef476b16825641dcc955269150e2ddd9bd4c, 
+BADGE AWARDED: 2013-05-16, Lunar Rover Geometry, E:\websites/badge-it-gadget-lite/digital-badges/issued/json/1-000p8175q0ns196p80q4r533r9197863.json, f53c377a42008ffbe81a44b1e6014223b8296541e6baaad0effe6e98106afc98, /badge-it-gadget-lite/digital-badges/images/LunarRoverGeometryCertificate.pdf

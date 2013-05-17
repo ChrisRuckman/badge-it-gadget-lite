@@ -106,9 +106,9 @@ if( isset($_POST) ){
 			 	fclose($badgeHandle);
 				
 				$to = $badgeRecipientEmail;
-				$from = "issuer email address goes here";
+				$from = "badges@cet.edu";
 				$subject = "Your " . $badgeName . " Badge";
-				$message = 'Congratulations, ' . $badgeRecipientName . '!
+				$message = 'Congratulations!
 
 You have successfully completed the ' . $badgeName . ' activity and earned a badge.
 
@@ -122,9 +122,11 @@ Please DO show off your certificate, and share how you earned it!
 
 Badge Team at the Center for Educational Technologies
 Home of the NASA-sponsored Classroom of the Future
+http://badges.cet.edu
 ';
 				$headers = "To: " . $to . "\r\n";
 				$headers .= "From: " . $from . "\r\n";
+				//$headers .= "Bcc: ruckman@cet.edu\r\n";
 
 				if(mail($to, $subject, $message, $headers)) {
 					$successes .= "<div>" . $to . "</div>";
@@ -149,10 +151,10 @@ Home of the NASA-sponsored Classroom of the Future
 		$sql = "INSERT INTO `awardslog` (`badgename`, `issuername`, `numissued`)
 				VALUES ('$badgeName', '$issuername', '$numissued')";
 
-		$dbhost = 'your database host';
-		$dbuser = 'username';
-		$dbpass = 'password';
-		$dbname = 'database';
+		$dbhost = 'db2.cet.edu';
+		$dbuser = 'andrew';
+		$dbpass = '54mur41';
+		$dbname = 'badges';
 
 		$link = mysql_connect($dbhost, $dbuser, $dbpass);
 		mysql_select_db($dbname);
